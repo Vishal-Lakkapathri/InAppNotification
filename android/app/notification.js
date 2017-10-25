@@ -16,6 +16,7 @@ export default class Noti extends Component {
         return(
             <View>
                 <Text>Selected {this.props.seconds}</Text>
+                
             </View>
         )
     }

@@ -11,10 +11,12 @@ import {
   Text,
   View,
   Picker,
-  AppState
+  AppState,
+  Alert,
+  Button
 } from 'react-native';
 import Noti from './notification.js'
-import  PushNotification  from 'react-native-push-notification'
+import PushNotification from 'react-native-push-notification'
 
 
 const instructions = Platform.select({
@@ -62,7 +64,15 @@ export default class App extends Component {
           <Picker.Item label="10" value={10} />
           <Picker.Item label="15" value={15} />
         </Picker>
-        <Noti seconds = {this.state.seconds}></Noti>
+        <Noti seconds={this.state.seconds}></Noti>
+        <View>
+          <Text style={styles.welcome}>Please Click the below button for In-App Notification</Text>
+          <Button
+            title="INAPP"
+            color="#FC5304"
+            onPress={() => setTimeout(function() {Alert.alert('Alert Msg', alertMessage = "In App Notification")}, 5000)}>
+        </Button>
+        </View>
       </View>
     );
   }
